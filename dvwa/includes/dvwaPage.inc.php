@@ -146,8 +146,9 @@ function dvwaSecurityLevelGet() {
 
 	// If there is a security cookie, that takes priority.
 	if (isset($_COOKIE['security'])) {
-		
-		return htmlspecialchars($_COOKIE[ 'security' ],ENT_QUOTES, 'UTF-8');
+		// Vuln fixada
+		//return htmlspecialchars($_COOKIE[ 'security' ],ENT_QUOTES, 'UTF-8');
+		return $_COOKIE[ 'security' ];
 	}
 
 	// If not, check to see if authentication is disabled, if it is, use
